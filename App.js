@@ -42,16 +42,16 @@ export default function App() {
   }
 
   function errorMessage(){
-    return <View color="red">Invalid input, please try again.</View>
+    return <View style={styles.textError}>Invalid input, please try again.</View>
   }
   function greater(){
-    return <View color="green">Number 1 is bigger than Number 2.</View>
+    return <View style={styles.textAns}>Number 1 is bigger than Number 2.</View>
   }
   function equaler(){
-    return <View color="green">Number 1 is equal to Number 2.</View>
+    return <View style={styles.textAns}>Number 1 is equal to Number 2.</View>
   }
   function lesser(){
-    return <View color="green">Number 1 is less than Number 2.</View>
+    return <View style={styles.textAns}>Number 1 is less than Number 2.</View>
   }
 
   return (
@@ -128,5 +128,13 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: "#000000",
     alignSelf: "center"
+  },
+
+  textError: {
+    color: "#ff0000"
+  },
+
+  textAns: {
+    color: "#00ff00"
   }
 });
