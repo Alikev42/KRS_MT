@@ -16,11 +16,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text>Input a number:</Text>
-      <TextInput
-        style={styles.input}
-        onChangeText={onChangeNumber}
-        value={number}
-      />
+
       <TextInput
         style={styles.input}
         onChangeText={onChangeNumber}
