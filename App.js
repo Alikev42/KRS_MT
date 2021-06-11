@@ -11,37 +11,34 @@ export default function App() {
 
   function doCompare(){
     // User numbers < 2 && > 100 are invalid
-    
     if (number1 < 2) {
-      // Send error message 
-      ()=>setMessage(errorMessage());
+      // Set error message 
+      return (()=>setMessage(errorMessage()));
     } 
     else if (number1 > 100) {
-      // Send error message
-      ()=>setMessage(errorMessage());
+      // Set error message
+      return (()=>setMessage(errorMessage()));
     }
     else if (number2 < 2) {
-      // Send error message
-      ()=>setMessage(errorMessage());
+      // Set error message
+      return (()=>setMessage(errorMessage()));
     }
     else if (number2 > 100) {
-      // Send error message
-      ()=>setMessage(errorMessage());
+      // Set error message
+      return (()=>setMessage(errorMessage()));
     }
-    
+  
+    // User number comparisons with each other
     if (number1 > number2) {
-      // Proclaim Number 1 is greater than Number 2
-      ()=>setMessage(greater());
+      return (()=>setMessage(greater()));
     }
-    else if (number1 === number2) {
-      ()=>setMessage(equaler());
+    else if (number1 == number2) {
+      return (()=>setMessage(equaler()));
     }
     else if (number1 < number2) {
-      ()=>setMessage(lesser());
+      return (()=>setMessage(lesser()));
     } 
-    return(
-      <View>{message}</View>
-    )
+    return  // Return without updating any message 
   }
 
   function errorMessage(){
@@ -56,12 +53,6 @@ export default function App() {
   function lesser(){
     return <View color="green">Number 1 is less than Number 2.</View>
   }
-/*
-  function getCompare() {
-    const greater = number1 > number2;
-    return `The square of ${number} is ${squared}`;
-  }
-*/
 
   return (
     <View style={styles.container}>
@@ -85,7 +76,6 @@ export default function App() {
         keyboardType="numeric"
         />
 
-
         <Button title="COMPARE" 
                 color="#0088aa"
                 onPress={() => setMessage(doCompare())} />
@@ -95,7 +85,9 @@ export default function App() {
   );
 }
 
-
+////////////
+// Styles //
+////////////
 
 const styles = StyleSheet.create({
   container: {
