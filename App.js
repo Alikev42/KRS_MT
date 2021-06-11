@@ -61,26 +61,28 @@ export default function App() {
         <Text style={styles.boxTextBody}>Compare two numbers</Text>
       </View>
       
-      <Text style={styles.boxTextNum}>Number 1:</Text>
-      <TextInput
-        style={styles.input}
-        onChangeText={onChangeNumber1}
-        value={number1}
-        keyboardType="numeric"
-        />
-      <Text style={styles.boxTextNum}>Number 2:</Text>
-      <TextInput
-        style={styles.input}
-        onChangeText={onChangeNumber2}
-        value={number2}
-        keyboardType="numeric"
-        />
+      <View style={styles.box2}>
+        <Text style={styles.boxTextNum}>Number 1:</Text>
+        <TextInput
+          style={styles.input}
+          onChangeText={onChangeNumber1}
+          value={number1}
+          keyboardType="numeric"
+          />
+        <Text style={styles.boxTextNum}>Number 2:</Text>
+        <TextInput
+          style={styles.input}
+          onChangeText={onChangeNumber2}
+          value={number2}
+          keyboardType="numeric"
+          />
 
-        <Button title="COMPARE" 
-                color="#0088aa"
-                onPress={() => setMessage(doCompare())} />
-        <StatusBar style="auto" />
-        <Text>{message} </Text>
+          <Button title="COMPARE" 
+                  color="#0088aa"
+                  onPress={() => setMessage(doCompare())} />
+          <StatusBar style="auto" />
+          <Text>{message} </Text>
+        </View>
     </View>
   );
 }
@@ -112,6 +114,16 @@ const styles = StyleSheet.create({
     flexDirection: "center",
     backgroundColor: "#0088aa"
   },
+  
+  box2: {
+    //width: 450,
+    height: 250,
+
+    alignSelf: "flex-start",
+    alignItems: "flex-start",
+    justifyContent: "space-around",
+    flexDirection: "center",
+  },
 
   boxTextHead: {
     fontSize: 42,
@@ -127,7 +139,7 @@ const styles = StyleSheet.create({
   boxTextNum: {
     fontSize: 15,
     color: "#000000",
-    alignSelf: "center"
+    alignSelf: "flex-start"
   },
 
   textError: {
